@@ -3,7 +3,6 @@
     <title>Pedidos</title>
 </head>
 <body bgcolor="#ff7f50">
-<p>Hola NEUS!</p>
 <br />
 </body>
 </html>
