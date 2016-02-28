@@ -7,12 +7,11 @@
 </body>
 </html>
 
-<ul id="menu">
-    <li><a href="home.php">Inicio</a></li>
-    <li><a href="galeria.php">Galeria</a></li>
-    <li><a href="nosotros.php">Nosotros</a></li>
-    <li><a href="pedidos.php">Pedidos</a></li>
-</ul>
-<ul id="login">
-    <li><a href="login.php">Loggin</a></li>
-</ul>
+<TABLE id="menu" WIDTH="50%" BORDER="1" CELLSPACING="3" CELLPADDING="2">
+    <TR>
+        <TD COLSPAN="4"><a href="home.php">Home</a></TD>
+        <TD><a href="nosotros.php">Nosotros</a></TD>
+        <TD><a href="pedidos.php">Pedidos</a></TD>
+        <TD><a href="login.php">Login</a></TD>
+    </TR>
+</TABLE>
