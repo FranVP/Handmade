@@ -3,7 +3,6 @@
     <title>Galeria</title>
 </head>
 <body bgcolor="#7fffd4">
-<p>Hola NEUS!</p>
 <br />
 </body>
 </html>
@@ -13,4 +12,7 @@
     <li><a href="galeria.php">Galeria</a></li>
     <li><a href="nosotros.php">Nosotros</a></li>
     <li><a href="pedidos.php">Pedidos</a></li>
+</ul>
+<ul id="login">
+    <li><a href="login.php">Loggin</a></li>
 </ul>

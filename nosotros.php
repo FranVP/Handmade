@@ -3,7 +3,6 @@
     <title>Nosotros</title>
 </head>
 <body bgcolor="#7fff00">
-<p>Hola NEUS!</p>
 <br />
 </body>
 </html>

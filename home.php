@@ -3,7 +3,6 @@
 <title>Home</title>
 </head>
 <body bgcolor="#6b8e23">
-<p>Hola NEUS!</p>
 <br />
 </body>
 </html>
