@@ -4,13 +4,7 @@ if (isset ($_GET['id'])){
 
 include('_setup.php');
 
-$consulta=<<<SQL
-DELETE FROM galerias
-WHERE IDGALERIA='$id'
-LIMIT 1
-SQL;
-
-mysqli_query($cnx,$consulta);
+mysqli_query($conexion, "DELETE FROM galerias WHERE ID_GALERIA='$id'LIMIT 1")or die("Error: ".mysqli_error($conexion));;
 }
 header("Location: index.php");
 ?>

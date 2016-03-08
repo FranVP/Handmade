@@ -3,15 +3,7 @@ include('_setup.php');
 $titulo = $_POST['titulo'];
 $descripcion = $_POST['descripcion'];
 
-$consulta = <<<SQL
-INSERT INTO
-      galerias
-SET
-    TITULO='$titulo',
-    DESCRIPCION='$descripcion',
-    FECHA_ALTA = NOW()
-SQL;
-mysqli_query($cnx, $consulta);
+mysqli_query($conexion, "INSERT INTO galerias SET TITULO='$titulo',DESCRIPCION='$descripcion',FECHA_ALTA = NOW()")or die("Error: ".mysqli_error($conexion));;
 
 header('Location: index.php');
 ?>

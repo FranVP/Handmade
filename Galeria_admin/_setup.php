@@ -1,3 +1,4 @@
 <?php
-$cnx = mysqli_connect( 'localhost','root','root','handmade');
+$conexion = mysqli_connect( 'localhost','root','');
+mysqli_select_db($conexion, "handmade");
 ?>

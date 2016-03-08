@@ -1,15 +1,17 @@
 <?php
 include('_setup.php');
-$id = $_GET['id'];
 
-$consulta=<<<SQL
-SELECT TITULO, DESCRIPCION
-FROM galerias WHERE IDGALERIA = '$id'
-LIMIT 1
-SQL;
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 
-$filas = mysqli_query( $cnx, $consulta);
-$columnas = mysqli_fetch_assoc($filas);
+$result = mysqli_query($conexion, "SELECT TITULO, DESCRIPCION FROM galerias WHERE ID_GALERIA = '$id' LIMIT 1")or die("Error: ".mysqli_error($conexion));;
+$fila = mysqli_fetch_assoc($result);
+
+
+mysqli_free_result($result);
+mysqli_close($conexion);
+
+
+
 ?>
 <html>
 <head>
@@ -23,11 +25,11 @@ $columnas = mysqli_fetch_assoc($filas);
 <body>
 <form method="post" action="modificar_galeria.php">
     <label>Titulo</label>
-    <input type="text" name="titulo" value="<?php echo $columnas['TITULO'];?>" />
+    <input type="text" name="titulo" value="<?php echo $fila['TITULO'];?>" />
     <label>Descripcion</label>
-    <textarea name="descripcion" rows="5" cols="90"><?php echo $columnas['DESCRIPCION'];?>"</textarea>
-    <input type="hidden" name="idgaleria" value="<?php echo $id; ?>"/>
-    <input type="Submit"/>
+    <textarea name="descripcion" rows="5" cols="90"><?php echo $fila['DESCRIPCION'];?></textarea>
+    <input type="hidden" name="id_galeria" value="<?php echo $id; ?>"/>
+    <input type="SUBMIT"/>
 </form>
 </body>
 </html>
