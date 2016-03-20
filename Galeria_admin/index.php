@@ -26,7 +26,7 @@ $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FE
         echo "<td>$fila[TITULO]</td>";
         echo "<td>$fila[DESCRIPCION]</td>";
         echo "<td>$fila[FECHA_ALTA]</td>";
-        echo "<td> <a href='editar_galeria.php?id=$fila[ID_GALERIA]'>editar</a> | <a href='borrar_galeria.php?id=$fila[ID_GALERIA]'>borrar </a>|<a href='modificar_galeria.php?id=$fila[ID_GALERIA]'> administrar</a></td>";
+        echo "<td> <a href='editar_galeria.php?id=$fila[ID_GALERIA]'>editar</a> | <a href='borrar_galeria.php?id=$fila[ID_GALERIA]'>borrar </a>|<a href='administrar_fotos.php?id=$fila[ID_GALERIA]'> administrar fotos</a></td>";
         echo "<tr>";
     }
 
