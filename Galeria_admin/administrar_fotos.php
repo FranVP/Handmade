@@ -4,25 +4,20 @@ $id = $_GET['id'];
 
 $filas = mysqli_query($conexion, "SELECT ID_FOTO, ARCHIVO, NOMBRE, ESTADO FROM imagenes WHERE FKGALERIA='$id' ORDER BY POSICION ASC")or die("Error: ".mysqli_error($conexion));;
 
-
 ?>
-
 <html>
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <style>
-        label{display: block;}
-    </style>
 </head>
 <body>
     <h1>Panel de control</h1>
     <h2>Administrador de fotos</h2>
-
     <h3>ORDENAR LAS FOTOS</h3>
     <form id="fotos" method="post" action="administrar_fotos_ordenar.php"><?php
-    while ($columna = mysqli_fetch_assoc($filas)) {
-
+    $cantidad = 0;
+        while ($columna = mysqli_fetch_assoc($filas)) {
+        $cantidad++;
         echo '<div>';
         echo "<p>$columna[NOMBRE] <a href='#'>subir</a>  <a href='#'>bajar</a> </p>";
         echo "<img src='../fotos/$columna[ARCHIVO]' height='100' />";
@@ -30,9 +25,8 @@ $filas = mysqli_query($conexion, "SELECT ID_FOTO, ARCHIVO, NOMBRE, ESTADO FROM i
         echo '<hr />';
         echo '</div>';
     }
-
     ?><input type="submit" id="guardar_posicion" value="Guardar cambios" />
-    <input type="hidden" name="id_galeria" value="<?php echo id; ?>"/></form>
+    <input type="hidden" name="id_galeria" value="<?php echo $id; ?>"/></form>
     <script type="text/javascript">
         var form = document.getElementById('fotos');
         var divs = form.getElementsByTagName('div');
@@ -57,20 +51,48 @@ $filas = mysqli_query($conexion, "SELECT ID_FOTO, ARCHIVO, NOMBRE, ESTADO FROM i
                 }
         }
     </script>
-
 <hr />
     <h3>SUBIR FOTOS NUEVAS</h3>
 
     <form method="post" enctype="multipart/form-data" action="administrar_foto_upload.php">
         <input type="hidden" name="id_galeria" value="<?php echo $id; ?>"/>
-        <div>
-            <label>Titulo</label>
-            <input type="text" name="titulo"/>
-            <label>Archivo</label>
-            <input type="file" name="archivo"/>
+        <input type="hidden" name="cantidad" value="<?php echo $cantidad; ?>" />
+
+        <div id="inputs_file">
+            <div>
+                <label>Titulo</label>
+                <input type="text" name="titulo[]"/>
+                <label>Archivo</label>
+                <input type="file" name="archivo[]"/>
+            </div>
         </div>
         <input type="submit" value="agregar fotos"/>
+        <input type="button" id='otra_foto' value="+ fotos" />
+        <script type="text/javascript">
+        var boton = document.getElementById('otra_foto');
+            boton.onclick = function(){
+                var div_cont = document.createElement('div');
+                var label1 = document.createElement('label');
+                    label1.innerHTML = ' Titulo ';
+                var input1 = document.createElement('input');
+                    input1.type = 'text';
+                    input1.name = 'titulo[]';
+                var label2 = document.createElement('label');
+                    label2.innerHTML = ' Archivo ';
+                var input2 = document.createElement('input');
+                    input2.type = 'file';
+                    input2.name = 'archivo[]';
+
+                var div = document.getElementById('inputs_file');
+
+                div_cont.appendChild(label1);
+                div_cont.appendChild(input1);
+                div_cont.appendChild(label2);
+                div_cont.appendChild(input2);
+
+                div.appendChild(div_cont);
+            }
+        </script>
     </form>
 </body>
-
 </html>
