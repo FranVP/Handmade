@@ -1,6 +1,5 @@
 <?php //panel administrador
 include('_setup.php');
-
 $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FECHA_ALTA FROM galerias");
 ?>
 <html>
@@ -45,9 +44,6 @@ while( $fila1 = mysqli_fetch_assoc( $busqueda )){
 }
 ?>
 </table>
-
-
-
 <h2>Listdo de galerias</h2>
 <div><a href="nueva_galeria.php"> Crear una galeria</a> </div>
 <table border="1">
