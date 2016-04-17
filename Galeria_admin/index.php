@@ -7,7 +7,7 @@ $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FE
     <meta charset="utf-8">
     <title>Administrador de Galerias</title>
 </head>
-<body>
+<body BGCOLOR="#FFFFCC">
 <h1>Panel de control</h1>
 
 <p>
