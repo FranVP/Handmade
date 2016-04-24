@@ -2,10 +2,14 @@
 include('_setup.php');
 $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FECHA_ALTA FROM galerias");
 ?>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
+    <!--Con esto hacemos que se adapte a moviles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Administrador de Galerias</title>
+    <!--llamamos al archivo css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body BGCOLOR="#FFFFCC">
 <h1>Panel de control</h1>
@@ -64,5 +68,9 @@ while( $fila1 = mysqli_fetch_assoc( $busqueda )){
     }
     ?>
 </table>
+<!--Importante llamar antes a jQuery para que funcione bootstrap.min.js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--Llamamos al JavaScript de Bootstrap-->
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
