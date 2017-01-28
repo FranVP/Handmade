@@ -2,43 +2,51 @@
 include('_setup.php');
 $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FECHA_ALTA FROM galerias");
 ?>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <!--Con esto hacemos que se adapte a moviles-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Administrador de Galerias</title>
-    <!--llamamos al archivo css-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!DOCTYPE html>
+<html>
+<head lang="es">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Admin Galerias</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 </head>
-<body BGCOLOR="#FFFFCC">
-<h1>Panel de control</h1>
 
+<body >
+<div class="container">
+<h1>Panel de control</h1>
 <p>
 <form name="form1" method="post" action="index.php" id="cdr">
     <h2>Buscar Galeria</h2>
     <input name="busca" type="text" id="busqueda">
-    <input type="submit" name="submit" value="Buscar">
+    <input class="btn btn-primary" type="submit" name="submit" value="Buscar">
 </p>
 </form>
 
 <?php
-$busca="";
-$busca=$_POST['busca'];
+$busca='';
+$busca= isset($_POST['busca'])?$_POST['busca']:NUll;
 if($busca!=""){
-    $busqueda = mysqli_query($conexion,"SELECT TITULO, FECHA_ALTA, DESCRIPCION , ID_GALERIA from galerias where titulo like '%".$busca."%'")or die("Error: ".mysqli_error($conexion));;
+    $busqueda = mysqli_query
+    ($conexion,"
+    SELECT ID_GALERIA, TITULO, DESCRIPCION, FECHA_ALTA
+    from galerias
+    where titulo like '%".$busca."%'")
+    or die("Error: ".mysqli_error($conexion));;
 }
 ?>
 <h2>Listdo de galerias buscadas</h2>
-<table border="1">
+<div class="col-md-6">
+    <table class="table table-condensed">
+    <thead>
     <tr>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Fecha alta</th>
-        <th>Botones accion</th>
+        <th> Nombre </th>
+        <th> Descripcion </th>
+        <th> Fecha alta </th>
+        <th> Botones accion </th>
     </tr>
+    </thead>
 <?php
-while( $fila1 = mysqli_fetch_assoc( $busqueda )){
+while( $fila1 = mysqli_fetch_assoc( isset($busqueda)?$_GET[$busqueda]:NUll)){
     echo "<tr>";
     echo "<td>.$fila1[TITULO]</td>";
     echo "<td>.$fila1[DESCRIPCION]</td>";
@@ -48,9 +56,15 @@ while( $fila1 = mysqli_fetch_assoc( $busqueda )){
 }
 ?>
 </table>
+</div>
+
+
+
+
 <h2>Listdo de galerias</h2>
 <div><a href="nueva_galeria.php"> Crear una galeria</a> </div>
-<table border="1">
+    <div class="col-md-6">
+<table class="table table-condensed">
     <tr>
         <th>Nombre</th>
         <th>Descripcion</th>
@@ -68,9 +82,8 @@ while( $fila1 = mysqli_fetch_assoc( $busqueda )){
     }
     ?>
 </table>
-<!--Importante llamar antes a jQuery para que funcione bootstrap.min.js-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!--Llamamos al JavaScript de Bootstrap-->
-<script src="js/bootstrap.min.js"></script>
+    </div>
+    </div>
+<script src="js/jquery.js"></script>
 </body>
 </html>
