@@ -3,6 +3,15 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style>
+
+        body{
+            /*background-color: #b6abff;*/
+            background: linear-gradient(#000000,dimgray,grey,darkgray,#c0c0c0,lightgray )
+        }
+
+
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -35,9 +44,83 @@
                     <li><a href="login.php">Login</a></li>
                 </ul>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </nav>
 </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail First" src="img/quien_somos.jpg" />
+                            <div class="caption">
+                                <h3>
+                                    Quien somos
+                                </h3>
+                                <p>
+                                    Encuentra toda la información sobre nosotros, donde nació la idea de handmade presents y en donde están nuestras oficinas.
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="nosotros.php">Quien Somos</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Second" src="img/Galeria_home.png" />
+                            <div class="caption">
+                                <h3>
+                                    Visita nuestra Galería
+                                </h3>
+                                <p>
+                                    En nuestra Galería podrás encontrar todos nuestros productos. Tanto los que tenemos, como los que hemos tenido.
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="galeria.php">Galería</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail Third" src="img/Contacta_home.jpg" />
+                            <div class="caption">
+                                <h3>
+                                    Contacta con nosotros
+                                </h3>
+                                <p>
+                                    Has visto algún producto que te gusta y no tenemos actualmente, tienes una idea y quieres saber si podríamos hacerlo...
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary" href="#">Contacta</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+
+
+            <p class="text-muted credit">Handmade Presents, Copyright 2016/2017</p>
+
+
+
+        </div>
+    </div>
+
+
+
     <script src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
