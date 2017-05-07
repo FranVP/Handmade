@@ -25,6 +25,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="pedidos.php">Pedidos</a></li>
                 <li><a href="galeria.php">Galeria</a></li>
             </ul>
             <!-- <form class="navbar-form navbar-left">
@@ -40,61 +41,45 @@
 </nav>
 </div>
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
                 <form class="form-horizontal" method="post">
                     <fieldset>
-                        <legend class="text-center header">Pedidos</legend>
+                        <legend class="text-center header">Contacta con Nosotros</legend>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
+                            <div class="col-md-10">
                                 <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
                             </div>
+                        </div>
+                        <div class="form-group">
                             <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
+                            <div class="col-md-10">
                                 <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
+                            <div class="col-md-10">
                                 <input id="email" name="email" type="text" placeholder="Email" class="form-control">
                             </div>
+                        </div>
+
+                        <div class="form-group">
                             <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
+                            <div class="col-md-10">
                                 <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="dir" name="dir" type="text" placeholder="Direccion" class="form-control">
-                            </div>
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="numero" name="numero" type="number" placeholder="Numero" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="piso" name="piso" type="number" placeholder="Piso" class="form-control">
-                            </div>
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="cp" name="cp" type="number" placeholder="C.P." class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Introduce la descripción de tu pedido." rows="10" maxlength="1500"></textarea>
+                            <div class="col-md-10">
+                                <textarea class="form-control" id="message" name="message" placeholder="Introduce tu consulta." rows="10" maxlength="1500"></textarea>
                             </div>
                         </div>
 
@@ -110,13 +95,13 @@
     </div>
 </div>
 
-
 <div class="modal-footer">
     <div class="row">
         <div class="col-xs-12 col-sm-9">
             © 2016-2017 Handmade Presents
             <a href="home.php">Home</a>
             <a href="nosotros.php">Nosotros</a>
+            <a href="pedidos.php">Pedidos</a>
             <a href="galeria.php">Galeria</a>
         </div>
     </div>

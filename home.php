@@ -88,7 +88,7 @@
                                     Has visto algún producto que te gusta y no tenemos actualmente, tienes una idea y quieres saber si podríamos hacerlo...
                                 </p>
                                 <p>
-                                    <a class="btn btn-primary" href="#">Contacta</a>
+                                    <a class="btn btn-primary" href="contacta.php">Contacta</a>
                                 </p>
                             </div>
                         </div>

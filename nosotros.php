@@ -1,17 +1,61 @@
 <html>
-<head>
-    <title>Nosotros</title>
+<head lang="es">
+    <meta charset="UTF-8">
+    <title>Pedidos</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style>
+        body{
+            background-color: #b6abff}
+    </style>
 </head>
-<body bgcolor="#7fff00">
-<br />
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Cambiar Navegacion</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.php">HANDMADE PRESENTS</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="pedidos.php">Pedidos</a></li>
+                <li><a href="galeria.php">Galeria</a></li>
+            </ul>
+            <!-- <form class="navbar-form navbar-left">
+                 <div class="form-group">
+                     <input type="text" class="form-control"></div>
+                 <button type="submit" class="btn btn-default">Buscar</button>
+             </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+
+
+<div class="modal-footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9">
+            © 2016-2017 Handmade Presents
+            <a href="home.php">Home</a>
+            <a href="pedidos.php">Pedidos</a>
+            <a href="galeria.php">Galeria</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<TABLE id="menu" WIDTH="50%" BORDER="1" CELLSPACING="3" CELLPADDING="2">
-    <TR>
-        <TD COLSPAN="4"><a href="home.php">Home</a></TD>
-        <TD><a href="galeria.php">Galeria</a></TD>
-        <TD><a href="pedidos.php">Pedidos</a></TD>
-        <TD><a href="login.php">Login</a></TD>
-    </TR>
-</TABLE>
