@@ -1609,6 +1609,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
 }
 .row {
   margin-right: -15px;
@@ -6768,5 +6769,18 @@ button.close {
 .bigicon {
     font-size: 35px;
     color: #36A0FF;
+}
+.footer{
+    padding-top: 38%;
+}
+.message{
+    margin: 10px;
+}
+.titulo{
+    color: #1c2288;
+}
+.titulo2{
+    color: #1c2288;
+    margin-top: 20px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
