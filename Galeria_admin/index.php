@@ -14,6 +14,7 @@ $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FE
 <div class="container">
 <h1>Panel de control</h1>
 <p>
+    <!--
 <form name="form1" method="post" action="index.php" id="cdr">
     <h2>Buscar Galeria</h2>
     <input name="busca" type="text" id="busqueda">
@@ -22,7 +23,7 @@ $resultado = mysqli_query($conexion, "SELECT ID_GALERIA, TITULO, DESCRIPCION, FE
 </form>
 
 <?php
-$busca="";
+/*$busca="";
 mysql_connect('localhost','root');
 mysql_select_db("handmade");
 
@@ -34,7 +35,7 @@ if($busca!=""){
     where TITULO like '%".$busca."%'")
     or die("Error: ".mysqli_error($conexion));;
 }
-?>
+*/?>
 
 
 
@@ -66,7 +67,7 @@ while( $fila1 = mysql_fetch_array ($busqueda)){
 </table>
 </div>
 
-
+-->
 
 
 <h2>Listdo de galerias</h2>

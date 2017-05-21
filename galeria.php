@@ -1,3 +1,6 @@
+<?php
+include('_conbbdd.php');
+?>
 <html>
 <head lang="es">
     <meta charset="UTF-8">
@@ -27,11 +30,6 @@
                 <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="pedidos.php">Pedidos</a></li>
             </ul>
-            <!-- <form class="navbar-form navbar-left">
-                 <div class="form-group">
-                     <input type="text" class="form-control"></div>
-                 <button type="submit" class="btn btn-default">Buscar</button>
-             </form>-->
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php">Login</a></li>
             </ul>
@@ -39,70 +37,59 @@
     </div>
 </nav>
 </div>
-<div class="container-fluid center">
+
+<div class="container center">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <div class="carousel slide" id="carousel-58560">
+                <!-- Indicadores -->
                 <ol class="carousel-indicators">
-                    <li data-slide-to="0" data-target="#carousel-58560">
-                    </li>
-                    <li data-slide-to="1" data-target="#carousel-58560" class="active">
-                    </li>
-                    <li data-slide-to="2" data-target="#carousel-58560">
-                    </li>
-                    <li data-slide-to="3" data-target="#carousel-58560">
-                    </li>
+                    <?php
+                    $control_activo = 2;
+                    $control_num_slide = 1;
+                    $result_carousel = "SELECT * FROM imagenes ORDER BY posicion ASC";
+                    $resultado_carousel = mysqli_query($conexion, $result_carousel);
+                    while($row_carousel = mysqli_fetch_assoc($resultado_carousel)){
+                        if($control_activo == 2){ ?>
+                            <li data-slide-to="0" data-target="#carousel-58560" class="active"></li><?php
+                            $control_activo = 1;
+                        }else{?>
+                        <li data-target="#carousel-58560" data-slide-to="<?php echo $control_num_slide; ?>"></li><?php
+                            $control_num_slide++;
+                        }
+                    }
+                    ?>
                 </ol>
-                <div class="carousel-inner">
-                    <div class="item">
-                        <img alt="Carousel Bootstrap 1" src="img/galeria/Galeria_3.png" />
-                        <div class="carousel-caption">
-                            <h4>
-                                First Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <img alt="Carousel Bootstrap 2" src="img/galeria/Galeria_2.png" />
-                        <div class="carousel-caption">
-                            <h4>
-                                Second Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justoid dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img alt="Carousel Bootstrap 3" src="img/galeria/Galeria_1.png" />
-                        <div class="carousel-caption">
-                            <h4>
-                                Third Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis in, llam id dolor id nibh elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img alt="Carousel Bootstrap 4" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                4 Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis
-                            </p>
-                        </div>
-                    </div>
-                </div> <a class="left carousel-control" href="#carousel-58560" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-58560" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <!-- SLIDE -->
+                <div class="carousel-inner" role="listbox">
+                    <?php
+                    $control_activo = 2;
+                    $result_carousel = "SELECT * FROM imagenes ORDER BY posicion ASC";
+                    $resultado_carousel = mysqli_query($conexion, $result_carousel);
+                    while($row_carousel = mysqli_fetch_assoc($resultado_carousel)){
+                        if($control_activo == 2) {?>
+                            <div class="item active">
+                            <img src="fotos/<?php echo $row_carousel['archivo']; ?>" alt="<?php echo $row_carousel['nombre']; ?>">
+                            </div><?php
+                            $control_activo = 1;
+                        }else{ ?>
+                            <div class="item">
+                                <img src="fotos/<?php echo $row_carousel['archivo']; ?>" alt="<?php echo $row_carousel['nombre']; ?>">
+                            </div> <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <a class="left carousel-control" href="#carousel-58560" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#carousel-58560" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
 </div>
+
+<!--
+-->
 <div class="modal-footer">
     <div class="row">
         <div class="col-xs-12 col-sm-9">
