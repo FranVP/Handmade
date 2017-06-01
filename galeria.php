@@ -47,7 +47,7 @@ include('_conbbdd.php');
                     <?php
                     $control_activo = 2;
                     $control_num_slide = 1;
-                    $result_carousel = "SELECT * FROM imagenes ORDER BY posicion ASC";
+                    $result_carousel = "SELECT * FROM imagenes WHERE estado ='visible' ORDER BY posicion ASC";
                     $resultado_carousel = mysqli_query($conexion, $result_carousel);
                     while($row_carousel = mysqli_fetch_assoc($resultado_carousel)){
                         if($control_activo == 2){ ?>
@@ -65,7 +65,7 @@ include('_conbbdd.php');
                 <div class="carousel-inner" role="listbox">
                     <?php
                     $control_activo = 2;
-                    $result_carousel = "SELECT * FROM imagenes ORDER BY posicion ASC";
+                    $result_carousel = "SELECT * FROM imagenes WHERE estado ='visible' ORDER BY posicion ASC";
                     $resultado_carousel = mysqli_query($conexion, $result_carousel);
                     while($row_carousel = mysqli_fetch_assoc($resultado_carousel)){
                         if($control_activo == 2) {?>
@@ -90,7 +90,7 @@ include('_conbbdd.php');
 
 <!--
 -->
-<div class="modal-footer">
+<div class="footer">
     <div class="row">
         <div class="col-xs-12 col-sm-9">
             © 2016-2017 Handmade Presents

@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head lang="es">
+    <meta charset="UTF-8">
+    <title>Contacta</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style>
+        body {
+            background-color: #b6abff
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Cambiar Navegacion</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.php">HANDMADE PRESENTS</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="pedidos.php">Pedidos</a></li>
+                <li><a href="galeria.php">Galeria</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+<?php
+$destino = "handmadepresents2017@gmail.com";
+$nombre = $_POST['name'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$mensaje = $_POST['message'];
+
+$contenido = "Nombre: " . $nombre . "\nApellido: " . $lname . "\nEmail: " . $email . "\nTeléfono: " . $phone . "\nMensaje: " . $mensaje . "\n";
+
+mail($destino, "contacto web", $contenido);
+
+echo "<div align='center'> ¡El formulario se ha enviado con éxito!.</div><br>";
+?>
+</body>
+</html>
+<div class="footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9">
+            © 2016-2017 Handmade Presents
+            <a href="home.php">Home</a>
+            <a href="nosotros.php">Nosotros</a>
+            <a href="pedidos.php">Pedidos</a>
+            <a href="galeria.php">Galeria</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

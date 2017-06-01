@@ -41,19 +41,33 @@
     </div>
 </nav>
 </div>
+<div class="img_nosotros">
+    <body background="img/art-1838414.jpg" />
+</div>
 <div class="container">
+    <body>
     <h1 class="titulo">Sobre nosotros</h1>
     <h2 class="titulo2">Nuestra historia</h2>
     <div class="message">
-        Handmade es el resultado de una iniciativa que nacio en un sofá en el verano de 2015.
-        Todo empezo con unos regalos a familiares, viendo que a los amigos les gustaban los diseños
-        decidimos crear la página de <a href="https://www.facebook.com/nalpresents" target="_top">facebook</a>
-        con la que vimos que tenian mas exito y decidimos crear la web para vender nuestros productos.
+        Handmade surgió como resultado del trabajo vocacional de los
+        fundadores de la empresa, una joven pareja con un talento
+        para la decoración y elaboración de una gran variedad
+        de artículos de regalo y con visión de negocio.
+        <br>
+        En un principio, se trataba de un negoció a
+        nivel local. Poco a poco, el exito los llevó a abrir una
+        página de <a href="https://www.facebook.com/nalpresents" target="_top">facebook</a> que tuvo tal repercusión que
+        finalmente decidieron emprender una nueva aventura,
+        generar su propia página web para hacer llegar sus
+        productos a todo el mundo.
     </div>
     <h2 class="titulo2">Qué hacemos</h2>
     <div class="message">
-        Creamos productos bonitos que conectan a las personas con mensajes llenos de felicidad y optimismo.
-        Reflejamos una forma de entender la vida, no sólo creamos productos.
+       Nuestra labor es crear productos elaborados al detalle
+       que a su vez transmiten mensajes de positivismo y alegría.
+       <br>
+       Handmade para nosotros es más que un negocio, es una manera
+       de compartir nuestro modo de entender la vida.
     </div>
     <h2 class="titulo2">Comunicación</h2>
     <div class="message">
@@ -68,12 +82,15 @@
         ¡Escríbenos a <a href="mailto:rrhh@handmade.cat" target="_top">rrhh@handmade.cat</a> y súmate a nuestro equipo!
     </div>
     <div class="message">
-        Explicanos tus motivaciones, tus talentos ocultos y como puedes colaborar con nosotros.
+        Explícanos tus motivaciones, tus talentos ocultos y cómo puedes colaborar con nosotros.
     </div>
+
+
+    </body>
 
 </div>
 
-    <div class="modal-footer">
+    <div class="footer">
         <div class="row">
             <div class="col-xs-12 col-sm-9">
                 © 2016-2017 Handmade Presents

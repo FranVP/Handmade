@@ -18,12 +18,17 @@
     function validarUsuario() {
         FB.getLoginStatus(function(response) {
             if(response.status == 'connected') {
-                alert('Bienvenido!');
             } else if(response.status == 'not_authorized') {
                 alert('Debes autorizar la app!');
             } else {
                 alert('Debes ingresar a tu cuenta de Facebook!');
             }
+        });
+    }
+    function fbLogout() {
+        FB.logout(function (response) {
+            //Do what ever you want here when logged out like reloading the page
+            window.location.reload();
         });
     }
 </script>
@@ -60,15 +65,20 @@
     </div>
 </nav>
 </div>
+<div class="container_login">
+Para realizar un pedido de alguno de la amplia oferta de productos disponibles en nuestra página web, rogamos se registren y nos hagan llegar sus peticiones y preferencias.</div>
+
+<div class="login">
+
+<body><fb:login-button scope="public_profile,email" onlogin="validarUsuario();">Entrar con Facebook</fb:login-button>
+<br></body>
 
 
-<body><fb:login-button scope="public_profile,email" onlogin="validarUsuario();">Entrar con Facebook</fb:login-button>  </body>
+<fb:login-button id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></fb:login-button>
 
-
-
-
+    </div>
 </div>
-<div class="modal-footer">
+<div class="footer">
     <div class="row">
         <div class="col-xs-12 col-sm-9">
             © 2016-2017 Handmade Presents

@@ -1,11 +1,12 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head lang="es">
     <meta charset="UTF-8">
-    <title>Pedidos</title>
+    <title>Contacta</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <style>
-        body{
-            background-color: #b6abff}
+        body {
+            background-color: #b6abff
+        }
     </style>
 </head>
 <body>
@@ -13,7 +14,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Cambiar Navegacion</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -28,11 +30,6 @@
                 <li><a href="pedidos.php">Pedidos</a></li>
                 <li><a href="galeria.php">Galeria</a></li>
             </ul>
-            <!-- <form class="navbar-form navbar-left">
-                 <div class="form-group">
-                     <input type="text" class="form-control"></div>
-                 <button type="submit" class="btn btn-default">Buscar</button>
-             </form>-->
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php">Login</a></li>
             </ul>
@@ -40,52 +37,58 @@
     </div>
 </nav>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post">
+                <form class="form-horizontal" method="post" action="contactaSendMail.php" method="post">
                     <fieldset>
                         <legend class="text-center header">Contacta con Nosotros</legend>
-
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
+
                             <div class="col-md-10">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control"
+                                       required="">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
+
                             <div class="col-md-10">
-                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
+                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control"
+                                       required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 text-center"></span>
+
+                            <div class="col-md-10">
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control"
+                                       required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 text-center"></span>
+
+                            <div class="col-md-10">
+                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control"
+                                       required="">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
+
                             <div class="col-md-10">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+                                <textarea class="form-control" id="message" name="message"
+                                          placeholder="Introduce tu consulta." rows="10" maxlength="1500"
+                                          required="required"></textarea>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-10">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-10">
-                                <textarea class="form-control" id="message" name="message" placeholder="Introduce tu consulta." rows="10" maxlength="1500"></textarea>
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                <input type="submit" value="Enviar" class="btn btn-primary btn-lg"></input>
                             </div>
                         </div>
                     </fieldset>
@@ -94,7 +97,14 @@
         </div>
     </div>
 </div>
-
+<?php
+error_reporting(0);
+$name = $_POST["name"];
+$lname = $_POST["lname"];
+$email = $_POST["email"];
+$phone = $_POST["phone"];
+$message = $_POST["message"];
+?>
 
 <div class="modal-footer">
     <div class="row">
