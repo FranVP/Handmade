@@ -115,7 +115,7 @@ body{
             $obj = new Login();
             if($obj->conectar()){
                 if($obj->logear($usuario,$password)){
-                    echo"<script src='pedidos.php'></script>";
+                    echo"<script>alert('exito');</script>";
 
                 }
                 else{
