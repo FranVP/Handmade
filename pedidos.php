@@ -52,43 +52,43 @@
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control">
-                            </div>
-                            <span class="col-md-1 text-center"></span>
-                            <div class="col-md-4">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
+                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="dir" name="dir" type="text" placeholder="Direccion" class="form-control">
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="numero" name="numero" type="number" placeholder="Numero" class="form-control">
+                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="dir" name="dir" type="text" placeholder="Direccion" class="form-control" required>
+                            </div>
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="numero" name="numero" type="number" placeholder="Numero" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="piso" name="piso" type="number" placeholder="Piso" class="form-control">
+                                <input id="piso" name="piso" type="text" placeholder="Piso" class="form-control" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="cp" name="cp" type="number" placeholder="C.P." class="form-control">
+                                <input id="cp" name="cp" type="text" placeholder="C.P." class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
