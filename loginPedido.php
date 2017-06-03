@@ -25,7 +25,6 @@ body{
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="nosotros.php">Nosotros</a></li>
-                <li><a href="pedidos.php">Pedidos</a></li>
                 <li><a href="galeria.php">Galeria</a></li>
             </ul>
         </div>
@@ -115,8 +114,8 @@ body{
             $obj = new Login();
             if($obj->conectar()){
                 if($obj->logear($usuario,$password)){
-                    echo"<script>alert('exito');</script>";
-
+                   // echo"<script>alert('exito');</script>";
+                    echo"<script>location.href='pedidos.php';</script>";
                 }
                 else{
                     echo"<script>alert('Usuario o contraseña incorrecta');</script>";
@@ -141,7 +140,7 @@ body{
     © 2016-2017 Handmade Presents
     <a href="home.php">Home</a>
             <a href="nosotros.php">Nosotros</a>
-            <a href="pedidos.php">Pedidos</a>
+            <a href="galeria.php">Galeria</a>
         </div>
     </div>
 </div>
