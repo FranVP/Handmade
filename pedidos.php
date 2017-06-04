@@ -1,4 +1,12 @@
 <html>
+<?php
+//Rellenar datos formulario
+/*
+ * include('_conbbdd.php');
+if($resultado = mysqli_query($conexion, "SELECT nombre, apellido, email,telefono FROM login ", MYSQLI_USE_RESULT)) {
+$formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+}
+*/?>
 <head lang="es">
     <meta charset="UTF-8">
     <title>Pedidos</title>
@@ -44,22 +52,22 @@
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required>
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" value="<?php /*echo $formulario['nombre']*/?>" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required>
+                                <input id="lname" name="lname" type="text" placeholder="Apellido" class="form-control" value="<?php /*echo $formulario['apellido']*/?>"required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" required>
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" value="<?php /*echo $formulario['email']*/?>" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" required>
+                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" value="<?php /*echo $formulario['telefono']*/?>" required>
                             </div>
                         </div>
 
