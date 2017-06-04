@@ -36,7 +36,8 @@ body{
         <div class="col-md-12 ">
             <div class="panel panel-default">
                  <div class="panel-body">
-                     <form class="form-horizontal" method="post">
+                     <!--FORMULARIO DE ALTA USUARIO -->
+                     <form class="form-horizontal" method="post" action="loginPedido_add_reg.php">
                          <div class="text-center">
                              <h1>Nuevo Usuario</h1>
                          </div>
@@ -45,7 +46,6 @@ body{
                              <div class="col-md-3">
                                  <input type="text" name="name" class="form-control" placeholder="Escribe tu Nombre" required>
                              </div>
-
                              <label class="col-md-1 control-label">Apellido:</label>
                              <div class="col-md-3">
                                  <input type="text" name="lname" class="form-control" placeholder="Escribe tu Apellido" required>
@@ -54,12 +54,11 @@ body{
                          <div class="form-group">
                              <label class="col-md-3 control-label">Email:</label>
                              <div class="col-md-3">
-                                 <input type="text" name="name" class="form-control" placeholder="Escribe tu email" required>
+                                 <input type="text" name="email" class="form-control" placeholder="Escribe tu email" required>
                              </div>
-
                              <label class="col-md-1 control-label">Teléfono:</label>
                              <div class="col-md-3">
-                                 <input type="text" name="lname" class="form-control" placeholder="Escribe tu Teléfono" required>
+                                 <input type="text" name="telef" class="form-control" placeholder="Escribe tu Teléfono" required>
                              </div>
                          </div>
                          <div class="form-group">
@@ -67,10 +66,9 @@ body{
                              <div class="col-md-3">
                                  <input type="text" name="user" class="form-control" placeholder="Escribe tu usuario" required>
                              </div>
-
                              <label class="col-md-1 control-label">Contraseña:</label>
                              <div class="col-md-3">
-                                 <input type="password" name="pass" class="form-control" placeholder="Escribe tu contraseña"required>
+                                 <input type="password" name="password" class="form-control" placeholder="Escribe tu contraseña"required>
                              </div>
                          </div>
                          <div class="form-group">
@@ -79,6 +77,7 @@ body{
                              </div>
                          </div>
                      </form>
+<!--FORMULARIO DE LOGIN -->
                      <form class="form-horizontal" method="post">
                          <div class="text-center">
                              <h1>Usuario</h1>
@@ -88,7 +87,6 @@ body{
                              <div class="col-md-3">
                                  <input type="text" name="us" class="form-control" placeholder="Escribe tu usuario" required>
                              </div>
-
                              <label class="col-md-1 control-label">Contraseña:</label>
                              <div class="col-md-3">
                                  <input type="password" name="pass" class="form-control" placeholder="Escribe tu contraseña"required>
@@ -108,13 +106,13 @@ body{
     <?php
         if(isset($_REQUEST["login"])){
             $usuario = $_REQUEST["us"];
-            $password = $_REQUEST["pass"];
+            $contraseña = $_REQUEST["pass"];
             require("./_conexionLogin.php");
             require("./logearPedido.php");
             $obj = new Login();
             if($obj->conectar()){
-                if($obj->logear($usuario,$password)){
-                   // echo"<script>alert('exito');</script>";
+                if($obj->logear($usuario,$contraseña)){
+                    echo"<script>alert('exito');</script>";
                     echo"<script>location.href='pedidos.php';</script>";
                 }
                 else{
@@ -126,11 +124,6 @@ body{
             }
         }
     ?>
-
-
-
-
-
 
     </div>
 </div>
