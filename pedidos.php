@@ -11,7 +11,6 @@
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Cambiar Navegacion</span>
@@ -21,17 +20,11 @@
             </button>
             <a class="navbar-brand" href="home.php">HANDMADE PRESENTS</a>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="galeria.php">Galeria</a></li>
             </ul>
-            <!-- <form class="navbar-form navbar-left">
-                 <div class="form-group">
-                     <input type="text" class="form-control"></div>
-                 <button type="submit" class="btn btn-default">Buscar</button>
-             </form>-->
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php">Login</a></li>
             </ul>
@@ -39,13 +32,12 @@
     </div>
 </nav>
 </div>
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post">
+                <!--FORMULARIO PEDIDO -->
+                <form class="form-horizontal" method="post" action="pedidos_add_reg.php">
                     <fieldset>
                         <legend class="text-center header">Pedidos</legend>
 
@@ -56,7 +48,7 @@
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control" required>
+                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required>
                             </div>
                         </div>
 
@@ -109,8 +101,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="modal-footer">
     <div class="row">
         <div class="col-xs-12 col-sm-9">
