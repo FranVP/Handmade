@@ -1,4 +1,38 @@
 <html>
+<script>
+    (function(d,s,id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if(d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "http://connect.facebook.net/es_ES/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId    : '1218331878194920',
+            cookie   : true,
+            xfbml    : true,
+            version  : 'v2.5'
+        });
+    }
+    function validarUsuario() {
+        FB.getLoginStatus(function(response) {
+            if(response.status == 'connected') {
+                location.href='pedidos.php';
+            } else if(response.status == 'not_authorized') {
+                alert('Debes autorizar la app!');
+            } else {
+                alert('No has entrado con tu cuenta de Facebook! Supongo que prefieres el Formulario');
+            }
+        });
+    }
+    function fbLogout() {
+        FB.logout(function (response) {
+            //Do what ever you want here when logged out like reloading the page
+            window.location.reload();
+        });
+    }
+</script>
 <head lang="es">
     <meta charset="UTF-8">
     <title>Login</title>
@@ -39,7 +73,7 @@ body{
                      <!--FORMULARIO DE ALTA USUARIO -->
                      <form class="form-horizontal" method="post" action="loginPedido_add_reg.php">
                          <div class="text-center">
-                             <h1>Nuevo Usuario</h1>
+                             <h2>Nuevo Usuario</h2>
                          </div>
                          <div class="form-group">
                              <label class="col-md-3 control-label">Nombre:</label>
@@ -77,10 +111,12 @@ body{
                              </div>
                          </div>
                      </form>
+<!--FORMULARIO facebook -->
+
 <!--FORMULARIO DE LOGIN -->
                      <form class="form-horizontal" method="post">
                          <div class="text-center">
-                             <h1>Usuario</h1>
+                             <h2>Usuario</h2>
                          </div>
                          <div class="form-group">
                              <label class="col-md-3 control-label">Usuario:</label>
@@ -97,6 +133,12 @@ body{
                                  <button class="btn btn-info" type="submit"  name="login" >Logear</button>
                              </div>
                          </div>
+                         <div class="text-center">
+                             <h2> O con Facebook</h2>
+                         </div>
+
+                         <div class="fb-login-button col-md-12 text-center" align="center" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"scope="public_profile,email" onlogin="validarUsuario();"></div>
+                         <br>
                      </form>
                  </div>
             </div>
@@ -124,7 +166,6 @@ body{
             }
         }
     ?>
-
     </div>
 </div>
 <div class="footer">
