@@ -13,7 +13,6 @@ $piso = $_POST['piso'];
 $c_p = $_POST['cp'];
 $message = $_POST['message'];
 
-
 mysqli_query($conexion, "INSERT INTO pedidos
 SET NOMBRE='$name',
 APELLIDO='$lname',
@@ -25,9 +24,7 @@ PISO='$piso',
 CODIGOPOSTAL='$c_p',
 DESCRIPCION='$message'")
 or die("Error: ".mysqli_error($conexion));;
-
 header('Location: pedidos.php');
-
 ?>
 </body>
 </html>
