@@ -6,11 +6,8 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
 $result = mysqli_query($conexion, "SELECT TITULO, DESCRIPCION FROM galerias WHERE ID_GALERIA = '$id' LIMIT 1")or die("Error: ".mysqli_error($conexion));;
 $fila = mysqli_fetch_assoc($result);
 
-
 mysqli_free_result($result);
 mysqli_close($conexion);
-
-
 
 ?>
 <html>

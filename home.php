@@ -26,16 +26,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                         <li><a href="nosotros.php">Nosotros</a></li>
-                        <li><a href="pedidos.php">Pedidos</a></li>
                         <li><a href="galeria.php">Galeria</a></li>
+                        <li><a href="contacta.php">Contacta</a></li>
                 </ul>
-                <!-- <form class="navbar-form navbar-left">
-                     <div class="form-group">
-                         <input type="text" class="form-control"></div>
-                     <button type="submit" class="btn btn-default">Buscar</button>
-                 </form>-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="loginPedido.php">Pedidos</a></li>
                 </ul>
             </div>
         </div>
@@ -102,8 +97,8 @@
             <div class="col-xs-12 col-sm-9">
                 © 2016-2017 Handmade Presents
                 <a href="nosotros.php">Nosotros</a>
-                <a href="pedidos.php">Pedidos</a>
                 <a href="galeria.php">Galeria</a>
+                <a href="contacta.php">Contacta</a>
             </div>
         </div>
     </div>

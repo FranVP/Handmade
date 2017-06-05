@@ -32,9 +32,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
             <ul class="nav navbar-nav">
                 <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="galeria.php">Galeria</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php">Login</a></li>
+                <li><a href="contacta.php">Contacta</a></li>
             </ul>
         </div>
     </div>
@@ -116,6 +114,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
             <a href="home.php">Home</a>
             <a href="nosotros.php">Nosotros</a>
             <a href="galeria.php">Galeria</a>
+            <a href="contacta.php">Contacta</a>
         </div>
     </div>
 </div>

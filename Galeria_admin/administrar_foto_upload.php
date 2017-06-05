@@ -4,7 +4,6 @@ $fkgaleria = $_POST ['id_galeria'];
 $cantidad = $_POST ['cantidad'];
 $estado= 'visible';
 
-
 foreach ( $_POST['titulo'] as $indice=>$titulo){
     $nombre_tmp = md5(mktime().$_FILES['archivo']['tmp_name'][$indice]);
     $nombre_file = $nombre_tmp .'.jpg';
@@ -18,10 +17,6 @@ foreach ( $_POST['titulo'] as $indice=>$titulo){
     move_uploaded_file($original,$destino);
 }
 
-
 header("Location: administrar_fotos.php?id=$fkgaleria");
-
-
-
 
 ?>
