@@ -70,7 +70,7 @@ while( $fila1 = mysql_fetch_array ($busqueda)){
 -->
 
 
-<h2>Listdo de galerias</h2>
+<h2>Listado de galerias</h2>
 <div><a href="nueva_galeria.php"> Crear una galeria</a> </div>
     <div class="col-md-12">
 <table class="table table-condensed">
