@@ -53,8 +53,8 @@ include('_conbbdd.php');
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="home_b.php">Home</a></li>
-                <li><a href="nosotros.php">Nosotros</a></li>
-                <li class="active"><a href="galeria.php">Galería</a></li>
+                <li><a href="nosotros_b.php">Nosotros</a></li>
+                <li class="active"><a href="galeria_b.php">Galería</a></li>
                 <li><a href="contacta.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
