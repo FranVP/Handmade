@@ -74,7 +74,7 @@
                 <li class="active"><a href="home_b.php">Home</a></li>
                 <li><a href="nosotros_b.php">Nosotros</a></li>
                 <li><a href="galeria_b.php">Galería</a></li>
-                <li><a href="contacta.php">Contacta</a></li>
+                <li><a href="contacta_b.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="loginPedido.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
