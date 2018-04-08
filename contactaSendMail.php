@@ -1,41 +1,75 @@
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head lang="es">
-    <meta charset="UTF-8">
-    <title>Contacta</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Handmade Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        body {
-            background-color: #b6abff
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+
+        /* Set black background color, white text and some padding */
+        footer {
+            margin-top: 5px;
+            background-color: #000000;
+            color: white;
+            padding: 5px;
+        }
+        .container{
+            margin-top: 5px;
+            margin-bottom:10px;
+        }
+        .jumbotron{
+            margin-top: 5px;
+
+        }
+        .volver_home{
+            margin-bottom: 110px;
+            margin-top: 110px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Cambiar Navegacion</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home.php">HANDMADE PRESENTS</a>
+            <a class="navbar-brand">HANDMADE</a>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="nosotros.php">Nosotros</a></li>
-                <li><a href="galeria.php">Galeria</a></li>
+                <li class="active"><a href="home_b.php">Home</a></li>
+                <li><a href="nosotros_b.php">Nosotros</a></li>
+                <li><a href="galeria_b.php">Galería</a></li>
+                <li><a href="contacta_b.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php">Pedidos</a></li>
+                <li><a href="loginPedido.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
             </ul>
         </div>
     </div>
 </nav>
-</div>
+
 <?php
 $destino = "handmadepresents2017@gmail.com";
 $nombre = $_POST['name'];
@@ -48,23 +82,29 @@ $contenido = "Nombre: " . $nombre . "\nApellido: " . $lname . "\nEmail: " . $ema
 
 mail($destino, "contacto web", $contenido);
 
-echo "<div align='center'> ¡El formulario se ha enviado con éxito!.</div><br>";
-?>
-</body>
-</html>
-<div class="footer">
-    <div class="row">
-        <div class="col-xs-12 col-sm-9">
-            © 2016-2017 Handmade Presents
-            <a href="home.php">Home</a>
-            <a href="nosotros.php">Nosotros</a>
-            <a href="galeria.php">Galeria</a>
-        </div>
-    </div>
-</div>
+//echo "<div align='center'> ¡El formulario se ha enviado con éxito!.</div><br>";
 
-<script src="js/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+?>
+
+<div class="container">
+    <header class="jumbotron my-4">
+        <h1 class="display-1">¡El formulario se ha enviado con éxito!.</h1>
+    </header>
+    <div class="col-md-12 text-center">
+    <p class="volver_home"><a class="btn btn-default btn-lg" href="home_b.php">Volver a la Home</a></p>
+        </div>
+</div>
 </body>
 </html>
+
+
+
+<footer class="py-5 bg-dark navbar">
+    <div class="container_footer">
+        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
+    </div>
+</footer>
+
+</body>
+</html>
+

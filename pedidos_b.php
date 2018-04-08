@@ -1,7 +1,16 @@
 <!DOCTYPE html>
+<?php
+//Rellenar datos formulario
+/*
+ * include('_conbbdd.php');
+if($resultado = mysqli_query($conexion, "SELECT nombre, apellido, email,telefono FROM login ", MYSQLI_USE_RESULT)) {
+$formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+}
+*/?>
+
 <html lang="en">
 <head>
-    <title>Contacta</title>
+    <title>Formulario Pedidos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,59 +61,69 @@
         </div>
     </div>
 </nav>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post" action="contactaSendMail.php" method="post">
+                <!--FORMULARIO PEDIDO -->
+                <form class="form-horizontal" method="post" action="pedidos_add_reg.php">
                     <fieldset>
-                        <legend class="text-center header">Contacta con Nosotros</legend>
-
+                        <legend class="text-center header">Pedidos</legend>
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-user text-primary"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required="">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" value="<?php /*echo $formulario['nombre']*/?>" required>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-user text-primary"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required="">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="lname" name="lname" type="text" placeholder="Apellido" class="form-control" value="<?php /*echo $formulario['apellido']*/?>"required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-envelope text-primary"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" required="">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" value="<?php /*echo $formulario['email']*/?>" required>
+                            </div>
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" value="<?php /*echo $formulario['telefono']*/?>" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-phone-square text-primary"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="dir" name="dir" type="text" placeholder="Direccion" class="form-control" required>
+                            </div>
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="numero" name="numero" type="number" placeholder="Numero" class="form-control" required>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-align-justify text-primary"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message"
-                                          placeholder="Introduce tu consulta." rows="10" maxlength="1500"
-                                          required="required"></textarea>
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="piso" name="piso" type="text" placeholder="Piso" class="form-control" required>
+                            </div>
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-4">
+                                <input id="cp" name="cp" type="text" placeholder="C.P." class="form-control" required>
                             </div>
                         </div>
-
-
-
-
-
+                        <div class="form-group">
+                            <span class="col-md-1 text-center"></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="message" name="message" placeholder="Introduce la descripción de tu pedido." rows="10" maxlength="1500"></textarea>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-12 text-center">
-                                <input type="submit" value="Enviar" class="btn btn-primary btn-lg"></input>
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                             </div>
                         </div>
                     </fieldset>
@@ -113,20 +132,12 @@
         </div>
     </div>
 </div>
-<?php
-error_reporting(0);
-$name = $_POST["name"];
-$lname = $_POST["lname"];
-$email = $_POST["email"];
-$phone = $_POST["phone"];
-$message = $_POST["message"];
-?>
-
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
         <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
     </div>
 </footer>
+
 
 <script src="js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

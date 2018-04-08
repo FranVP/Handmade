@@ -24,7 +24,7 @@ PISO='$piso',
 CODIGOPOSTAL='$c_p',
 DESCRIPCION='$message'")
 or die("Error: ".mysqli_error($conexion));;
-header('Location: pedidos.php');
+header('Location: pedidos_b.php');
 ?>
 </body>
 </html>
