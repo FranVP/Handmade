@@ -19,7 +19,7 @@ USUARIO='$user',
 PASSWORD='$pass'")
 or die("Error: ".mysqli_error($conexion));;
 
-header('Location: pedidos.php');
+header('Location: pedidos_b.php');
 
 ?>
 </body>
