@@ -77,7 +77,7 @@
                 <li><a href="contacta_b.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
+                <li><a href="loginPedido_b.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
             </ul>
         </div>
     </div>
@@ -100,7 +100,7 @@
                     <div class="caption">
                         <h3>Quien somos</h3>
                         <p>Encuentra toda la información sobre nosotros, donde nació la idea de handmade presents y en donde están nuestras oficinas.</p>
-                        <p><a class="btn btn-primary" href="nosotros.php">Quien Somos</a></p>
+                        <p><a class="btn btn-primary" href="nosotros_b.php">Quien Somos</a></p>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@
                     <div class="caption">
                         <h3>Visita nuestra Galería</h3>
                         <p>En nuestra Galería podrás encontrar todos nuestros productos. Tanto los que tenemos, como los que hemos tenido.</p>
-                        <p><a class="btn btn-primary" href="galeria.php">Galería</a></p>
+                        <p><a class="btn btn-primary" href="galeria_b.php">Galería</a></p>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                     <div class="caption">
                         <h3>Contacta con nosotros</h3>
                         <p>Has visto algún producto que te gusta, tienes una idea y quieres saber si podríamos hacerlo...</p>
-                        <p><a class="btn btn-primary" href="contacta.php">Contacta</a></p>
+                        <p><a class="btn btn-primary" href="contacta_b.php">Contacta</a></p>
                     </div>
                 </div>
             </div>

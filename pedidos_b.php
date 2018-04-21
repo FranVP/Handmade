@@ -56,7 +56,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
                 <li><a href="contacta_b.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
+                <li><a href="historialPedido.php"><span class="glyphicon glyphicon-log-in"></span> Historial</a></li>
             </ul>
         </div>
     </div>

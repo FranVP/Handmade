@@ -6,7 +6,7 @@
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
-            location.href='pedidos.php';
+            location.href='pedidos_b.php';
         } else if(response.status == 'not_authorized') {
             alert('Debes autorizar la app!');
         } else {
