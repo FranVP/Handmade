@@ -47,6 +47,7 @@
                 <li><a href="contacta_b.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="pedidos_b.php"><span class="glyphicon glyphicon-log-in"></span> Pedidos</a></li>
             </ul>
         </div>
     </div>
