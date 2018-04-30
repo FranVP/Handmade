@@ -1,3 +1,7 @@
+<?php
+include ('_conbbdd.php');
+$resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,telefono,direccion,numero,piso,codigopostal,descripcion,estado FROM pedidos")or die("Error: ".mysqli_error($conexion));;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,12 +64,14 @@
     <h2>Historial</h2>
     <p>Aqui tienes el historial de tus pedidos.</p>
     <div class="table-responsive">
-        <table class="table">
-            <thead>
+        <table class="table ">
+
             <tr>
                 <th>Nº pedido</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
                 <th>Direccion</th>
                 <th>Num</th>
                 <th>Piso</th>
@@ -73,31 +79,25 @@
                 <th>Descripción</th>
                 <th>Estado Pedido</th>
             </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>Anna</td>
-                <td>Pitt</td>
-                <td>Calle test 123</td>
-                <td>111</td>
-                <td>2</td>
-                <td>08032</td>
-                <td>Caja de madera de 30X30 con Nombre: Fran</td>
-                <td>Enviado</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Anna</td>
-                <td>Pitt</td>
-                <td>Calle test 123</td>
-                <td>111</td>
-                <td>2</td>
-                <td>08032</td>
-                <td>Caja de madera de 30X30 con Nombre: Neus</td>
-                <td>Preparando</td>
-            </tr>
-            </tbody>
+            <?php
+            while( $fila = mysqli_fetch_assoc( $resultado )){
+                echo "<tr>";
+                echo "<td>$fila[n_pedido]</td>";
+                echo "<td>$fila[nombre]</td>";
+                echo "<td>$fila[apellido]</td>";
+                echo "<td>$fila[email]</td>";
+                echo "<td>$fila[telefono]</td>";
+                echo "<td>$fila[direccion]</td>";
+                echo "<td>$fila[numero]</td>";
+                echo "<td>$fila[piso]</td>";
+                echo "<td>$fila[codigopostal]</td>";
+                echo "<td>$fila[descripcion]</td>";
+                echo "<td>$fila[estado]</td>";
+                echo "<td> <a href='editar_pedido.php?id=$fila[n_pedido]'>editar</a> </td>";
+                echo "<tr>";
+            }
+            ?>
+
         </table>
     </div>
 </div>
