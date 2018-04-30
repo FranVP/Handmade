@@ -52,11 +52,14 @@
         </div>
     </div>
 </nav>
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post" action="contactaSendMail.php" method="post">
+                <form class="form-horizontal" method="post" action="contactaSendMail.php">
                     <fieldset>
                         <legend class="text-center header">Contacta con Nosotros</legend>
 
@@ -64,27 +67,27 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-user text-primary"></i></span>
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required="">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required pattern="[A-Za-z]+" title="Solo letaras A-Za-z">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-user text-primary"></i></span>
                             <div class="col-md-8">
-                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required="">
+                                <input id="lname" name="lname" type="text" placeholder="Apellidos" class="form-control" required pattern="[A-Za-z]+" title="Solo letaras A-Za-z">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-envelope text-primary"></i></span>
                             <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" required="">
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Ejemplo: nombre@handmade.cat">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-phone-square text-primary"></i></span>
                             <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control" required pattern="[9|6|7]{1}[0-9]{8}" title=" Formato aceptado: Telefonos que empiezan por 9/6/7 + XXXXXXXX ">
                             </div>
                         </div>
 
