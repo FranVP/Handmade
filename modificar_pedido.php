@@ -9,6 +9,6 @@ $id = $_POST['n_pedido'];
 
 
 
-$result = mysqli_query($conexion, "UPDATE pedidos SET DIRECCION='$direccion', NUMERO='$numero',PISO='$piso',CODIGOPOSTAL='$codigopostal',DESCRIPCION='$descripcion' WHERE N_PEDIDO  = '$id'")or die("Error: ".mysqli_error($conexion));
+$result = mysqli_query($conexion, "UPDATE pedidos SET DIRECCION='$direccion', NUMERO='$numero',PISO='$piso',CODIGOPOSTAL='$codigopostal',DESCRIPCION='$descripcion' WHERE N_PEDIDO  = '$id' AND estado='Pendiente'")or die("Error: ".mysqli_error($conexion));
 header('Location: historialPedido.php');
 ?>

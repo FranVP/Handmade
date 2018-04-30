@@ -62,7 +62,7 @@ $resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,tel
 
 <div class="container">
     <h2>Historial</h2>
-    <p>Aqui tienes el historial de tus pedidos.</p>
+    <p>Aqui tienes el historial de tus pedidos. Solo podras modificar los datos mientras el estado sea Pendiente</p>
     <div class="table-responsive">
         <table class="table ">
 
