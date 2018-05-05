@@ -1,6 +1,6 @@
 <?php
 include ('_conbbdd.php');
-$resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,telefono,direccion,numero,piso,codigopostal,descripcion,estado FROM pedidos")or die("Error: ".mysqli_error($conexion));;
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,9 @@ $resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,tel
             margin-bottom: 0;
             border-radius: 0;
         }
-
+        .btn-info{
+            margin-top: 10px;
+        }
         footer {
             margin-top: 5px;
             background-color: #000000;
@@ -58,9 +60,25 @@ $resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,tel
 </nav>
 
 
-
+<?php
+$email = $_POST['email'];
+$resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,telefono,direccion,numero,piso,codigopostal,descripcion,estado FROM pedidos WHERE email='$email'")or die("Error: ".mysqli_error($conexion));
+?>
 
 <div class="container">
+    <form class="form-horizontal" method="post">
+    <div class="text-center">
+        <h2>Busca tus pedidos</h2>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label">Email:</label>
+        <div class="col-md-3">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Escribe tu email"  required>
+
+            <button class="btn btn-info" type="submit"  name="login" >buscar</button>
+
+        </div>
+    </div>
     <h2>Historial</h2>
     <p>Aqui tienes el historial de tus pedidos. Solo podras modificar los datos mientras el estado sea Pendiente</p>
     <div class="table-responsive">

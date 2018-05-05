@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<?php
-//Rellenar datos formulario
-/*
- * include('_conbbdd.php');
-if($resultado = mysqli_query($conexion, "SELECT nombre, apellido, email,telefono FROM login ", MYSQLI_USE_RESULT)) {
-$formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
-}
-*/?>
-
 <html lang="en">
+<?php
+error_reporting(0);
+include ('_conbbdd.php');
+
+$us = $_POST['us'];
+$pass = $_POST['pass'];
+
+
+//autocompletar formulario
+
+$resultado = mysqli_query($conexion,"SELECT usuario, email, nombre, apellido,telefono FROM login WHERE usuario='$us' and password='$pass'")
+or die("Error: ".mysqli_error($conexion));
+$fila = mysqli_fetch_assoc( $resultado);
+?>
+
 <head>
     <title>Formulario Pedidos</title>
     <meta charset="utf-8">
@@ -62,7 +68,6 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
     </div>
 </nav>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -71,26 +76,25 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
                 <form class="form-horizontal" method="post" action="pedidos_add_reg.php">
                     <fieldset>
                         <legend class="text-center header">Pedidos</legend>
-
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" value="<?php /*echo $formulario['nombre']*/?>" required>
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" value="<?php echo $fila['nombre']; ?>" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="lname" name="lname" type="text" placeholder="Apellido" class="form-control" value="<?php /*echo $formulario['apellido']*/?>"required>
+                                <input id="lname" name="lname" type="text" placeholder="Apellido" class="form-control" value="<?php echo $fila['apellido'];?>" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" value="<?php /*echo $formulario['email']*/?>" required>
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control" method="POST" value="<?php echo $fila['email']; ?>" required>
                             </div>
                             <span class="col-md-1 text-center"></span>
                             <div class="col-md-4">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" value="<?php /*echo $formulario['telefono']*/?>" required>
+                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control" value="<?php echo $fila['telefono'];?>" required>
                             </div>
                         </div>
 

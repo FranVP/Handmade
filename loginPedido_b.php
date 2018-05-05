@@ -143,7 +143,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <!--FORMULARIO DE ALTA USUARIO -->
-                    <form class="form-horizontal" method="post" action="loginPedido_add_reg.php">
+                    <form class="form-horizontal"  action="loginPedido_add_reg.php" method="post">
                         <div class="text-center">
                             <h2>Nuevo Usuario</h2>
                         </div>
@@ -170,11 +170,11 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Usuario:</label>
                             <div class="col-md-3">
-                                <input type="text" name="user" class="form-control" placeholder="Escribe tu usuario" required>
+                                <input type="text" name="user" id="us" class="form-control" placeholder="Escribe tu usuario" required>
                             </div>
                             <label class="col-md-1 control-label">Contraseña:</label>
                             <div class="col-md-3">
-                                <input type="password" name="password" class="form-control" placeholder="Escribe tu contraseña"required>
+                                <input type="password" name="password" id="pass" class="form-control" placeholder="Escribe tu contraseña"required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -184,18 +184,18 @@
                         </div>
                     </form>
                     <!--FORMULARIO DE LOGIN -->
-                    <form class="form-horizontal" method="post">
+                    <form class="form-horizontal" action="pedidos_b.php" method="post">
                         <div class="text-center">
                             <h2>Usuario</h2>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Usuario:</label>
                             <div class="col-md-3">
-                                <input type="text" name="us" class="form-control" placeholder="Escribe tu usuario" required>
+                                <input type="text" name="us" id="us" class="form-control" placeholder="Escribe tu usuario"  required>
                             </div>
                             <label class="col-md-1 control-label">Contraseña:</label>
                             <div class="col-md-3">
-                                <input type="password" name="pass" class="form-control" placeholder="Escribe tu contraseña"required>
+                                <input type="password" name="pass" id="pass" class="form-control" placeholder="Escribe tu contraseña"  required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -216,6 +216,7 @@
     </section>
 
     <?php
+
     if(isset($_REQUEST["login"])){
         $usuario = $_REQUEST["us"];
         $contraseña = $_REQUEST["pass"];
@@ -223,9 +224,9 @@
         require("./logearPedido.php");
         $obj = new Login();
         if($obj->conectar()){
-            if($obj->logear($usuario,$contraseña)){
+            if($obj->logear($usuario,$contraseña)) {
                 echo"<script>alert('exito');</script>";
-                echo"<script>location.href='pedidos_b.php';</script>";
+                //    echo "<script> location.href='pedidos_b.php' ;</script>";
             }
             else{
                 echo"<script>alert('Usuario o contraseña incorrecta');</script>";
