@@ -1,53 +1,26 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-
-    function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
-        if (response.status === 'connected') {
-            location.href='pedidos_b.php';
-        } else if(response.status == 'not_authorized') {
-            alert('Debes autorizar la app!');
-        } else {
-            alert('No has entrado con tu cuenta de Facebook! Supongo que prefieres el Formulario');
-        }
-    }
-
-    function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-    }
-
     window.fbAsyncInit = function() {
+        // FB JavaScript SDK configuration and setup
         FB.init({
-            appId      : '1218331878194920',
-            cookie     : true,  // enable cookies to allow the server to access
-                                // the session
+            appId      : '1218331878194920', // FB App ID
+            cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
         });
 
-        // Now that we've initialized the JavaScript SDK, we call
-        // FB.getLoginStatus().  This function gets the state of the
-        // person visiting this page and can return one of three states to
-        // the callback you provide.  They can be:
-        //
-        // 1. Logged into your app ('connected')
-        // 2. Logged into Facebook, but not your app ('not_authorized')
-        // 3. Not logged into Facebook and can't tell if they are logged into
-        //    your app or not.
-        //
-        // These three cases are handled in the callback function.
-
+        // Check whether the user already logged in
         FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
+            if (response.status === 'connected') {
+                //display user data
+                getFbUserData();
+            }
         });
-
     };
 
-    // Load the SDK asynchronously
+    // Load the JavaScript SDK asynchronously
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -56,34 +29,53 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
-        });
+    // Facebook login with JavaScript SDK
+    function fbLogin() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                // Get and display the user profile data
+                getFbUserData();
+            } else {
+                document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+            }
+        }, {scope: 'email'});
     }
-    (function(d,s,id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if(d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "http://connect.facebook.net/es_ES/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId    : '1218331878194920',
-            cookie   : true,
-            xfbml    : true,
-            version  : 'v2.5'
+
+    // Fetch the user profile data from facebook
+    function getFbUserData(){
+        FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
+            function (response) {
+                //document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
+                //document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
+                //document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
+                //document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '
+                //+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+                //save data
+                document.location.href="pedidos_b.php";
+                saveUserData(response);
+            });
+    }
+
+
+    // Save user data to the database
+    function saveUserData(userData){
+        $.post('userData.php', {oauth_provider:'facebook',userData: JSON.stringify(userData)}, function(data){ return true; });
+    }
+
+    // Logout from facebook
+    function fbLogout() {
+        FB.logout(function() {
+            document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
+            document.getElementById('userData').innerHTML = '';
+            document.getElementById('status').innerHTML = 'Has salido correctamente';
         });
     }
 
 
 </script>
+
+
+
 <html lang="en">
 <head>
     <title>Contacta</title>
@@ -207,7 +199,8 @@
                             <h2> O con Facebook</h2>
                         </div>
 
-                        <div class="fb-login-button col-md-12 text-center" align="center" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"scope="public_profile,email" onlogin="checkLoginState();"></div>
+                        <div href="javascript:void(0);" onclick="fbLogin()" id="fbLink" class="fb-login-button col-md-12 text-center" align="center" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"scope="public_profile,email" onlogin="checkLoginState();"></div>
+
                         <br>
                     </form>
                 </div>
