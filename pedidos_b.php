@@ -8,7 +8,7 @@ $us = $_POST['us'];
 $pass = $_POST['pass'];
 
 
-//autocompletar formulario
+//autocompletar formulario login
 
 $resultado = mysqli_query($conexion,"SELECT usuario, email, nombre, apellido,telefono FROM login WHERE usuario='$us' and password='$pass'")
 or die("Error: ".mysqli_error($conexion));
