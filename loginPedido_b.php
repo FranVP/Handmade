@@ -5,21 +5,18 @@
     window.fbAsyncInit = function() {
         // FB JavaScript SDK configuration and setup
         FB.init({
-            appId      : '1218331878194920', // FB App ID
+            appId      : '1218331878194920', // ID app facebook
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
         });
-
-        // Check whether the user already logged in
+        // Verificación del inicio de sesion del usuario
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                //display user data
                 getFbUserData();
             }
         });
     };
-
     // Load the JavaScript SDK asynchronously
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,36 +30,25 @@
     function fbLogin() {
         FB.login(function (response) {
             if (response.authResponse) {
-                // Get and display the user profile data
                 getFbUserData();
             } else {
                 document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
             }
         }, {scope: 'email'});
     }
-
-    // Fetch the user profile data from facebook
+    // obtener los datos del perfil de facebook
     function getFbUserData(){
         FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
-                //document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-                //document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-                //document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-                //document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '
-                //+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
-                //save data
                 document.location.href="pedidos_b.php";
                 saveUserData(response);
             });
     }
-
-
-    // Save user data to the database
+    // Guardar usuario en la base de datos
     function saveUserData(userData){
         $.post('userData.php', {oauth_provider:'facebook',userData: JSON.stringify(userData)}, function(data){ return true; });
     }
-
-    // Logout from facebook
+    // Cerrar sesion de facebook
     function fbLogout() {
         FB.logout(function() {
             document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
@@ -70,8 +56,6 @@
             document.getElementById('status').innerHTML = 'Has salido correctamente';
         });
     }
-
-
 </script>
 
 

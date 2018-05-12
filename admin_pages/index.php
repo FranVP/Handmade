@@ -25,43 +25,45 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand">HANDMADE ADMIN</a>
         </div>
     </div>
 </nav>
 <div class="container">
-    <section>
-        <div class="col-md-12 ">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form class="form-horizontal" action="validar.php" method="post">
-                        <div class="text-center">
-                            <h2>Usuario</h2>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Usuario:</label>
-                            <div class="col-md-3">
-                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Escribe tu usuario"  required>
-                            </div>
-                            <label class="col-md-1 control-label">Contraseña:</label>
-                            <div class="col-md-3">
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Escribe tu contraseña"  required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button class="btn btn-info" type="submit"  name="login" >Logear</button>
-                            </div>
-                        </div>
-                    </form>
+    <header class="jumbotron my-4">
+        <h1 class="display-1">Bienvenidos Administrador</h1>
+        <p class="lead">Desde aquí puedes gestionar las galerias y los pedidos</p>
+    </header>
+</div>
+
+
+<div class="container">
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-4 sidenav">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Galerias</h3>
+                        <p>Administra todo lo relacionado con las galerias</p>
+                        <p><a class="btn btn-primary" href="admin_galerias.php">Galerias</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 sidenav">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Pedidos</h3>
+                        <p>Gestiona los pedidos de tus usuarios</p>
+                        <p><a class="btn btn-primary" href="admin_pedidos.php">Pedidos</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+
 
 
 </div>
