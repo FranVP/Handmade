@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="../Handmade/js/fontawesome-all.js"></script>
     <style>
         .navbar {
             margin-bottom: 0;
@@ -36,8 +35,6 @@
         <p class="lead">Desde aquí puedes gestionar las galerias y los pedidos</p>
     </header>
 </div>
-
-
 <div class="container">
     <div class="container-fluid text-center">
         <div class="row content">
@@ -62,10 +59,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 </div>
 </div>
 <script src="js/jquery.js"></script>

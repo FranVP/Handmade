@@ -1,14 +1,10 @@
 <?php
 include ('_setup.php');
-
 $id = isset($_GET['id']) ? $_GET['id'] : '';
-
 $result = mysqli_query($conexion, "SELECT direccion, numero,piso,codigopostal,descripcion,estado FROM pedidos WHERE n_pedido = '$id' LIMIT 1")or die("Error: ".mysqli_error($conexion));;
 $fila = mysqli_fetch_assoc($result);
-
 mysqli_free_result($result);
 mysqli_close($conexion);
-
 ?>
 
 
@@ -22,19 +18,15 @@ mysqli_close($conexion);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="../Handmade/js/fontawesome-all.js"></script>
     <style>
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
         }
-
-
         .container{
             margin-top: 5px;
             margin-bottom:10px;
         }
-
     </style>
 </head>
 <body>
@@ -46,7 +38,7 @@ mysqli_close($conexion);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">HANDMADE</a>
+            <a class="navbar-brand">HANDMADE ADMIN</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
