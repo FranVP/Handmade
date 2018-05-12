@@ -79,17 +79,34 @@ or die("Error: ".mysqli_error($conexion));
 </div>
 <div class="container">
     <div class="well well-sm">FOTOS DE LA GALERIA</div>
-<form id="fotos" method="post" action="administrar_fotos_ordenar.php"><?php
-    $cantidad = 0;
-    while ($columna = mysqli_fetch_assoc($filas)) {
-        $cantidad++;
-        echo '<div>';
-        echo "<p>$columna[NOMBRE]</p>";
-        echo "<img src='../fotos/$columna[ARCHIVO]' height='100' />";
-        echo '<hr />';
-        echo '</div>';
-    }
-    ?>
+<form id="fotos" method="post" action="administrar_fotos_ordenar.php">
+    <div class="container">
+        <form class="form-horizontal" method="post">
+            <div class="table-responsive">
+                <table class="table ">
+                    <tr>
+                        <th>Nombre imagen</th>
+                        <th>Estado</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <?php
+                    while ($columna = mysqli_fetch_assoc($filas)) {
+                        echo "<tr>";
+                        echo "<td>$columna[NOMBRE]</td>";
+                        echo "<td>$columna[ESTADO]</td>";
+                        echo "<td><img src='../fotos/$columna[ARCHIVO]' height='100' /></td>";
+                        echo "<td> <a href='admin_fotos_editar.php?id=$columna[ID_FOTO]'>editar</a> | <a href='borrar_foto.php?id=$columna[ID_FOTO]'>borrar </a></td>";
+                        echo "<tr>";
+                    }
+                    ?>
+
+                </table>
+            </div>
+    </div>
+
+
+
     <input type="hidden" name="id_galeria" value="<?php echo $id; ?>"/>
 </form>
 </div>
