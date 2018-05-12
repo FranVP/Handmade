@@ -25,7 +25,9 @@ $filas = mysqli_query($conexion, "SELECT ID_FOTO, ARCHIVO, NOMBRE, ESTADO FROM i
         echo '<hr />';
         echo '</div>';
     }
-    ?><input type="submit" id="guardar_posicion" value="Guardar cambios" />
+    ?>
+    <p><a class="btn btn-primary" href="nueva_galeria.php">Crear una galeria</a></p>
+    <input class="btn btn-primary" type="submit" id="guardar_posicion" value="Guardar cambios" />
     <input type="hidden" name="id_galeria" value="<?php echo $id; ?>"/></form>
 <script type="text/javascript">
     var form = document.getElementById('fotos');
