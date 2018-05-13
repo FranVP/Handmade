@@ -160,7 +160,7 @@
                         </div>
                     </form>
                     <!--FORMULARIO DE LOGIN -->
-                    <form class="form-horizontal" action="pedidos_b.php" method="post">
+                    <form class="form-horizontal" action="validador_usuario.php" method="post">
                         <div class="text-center">
                             <h2>Usuario</h2>
                         </div>
@@ -179,6 +179,8 @@
                                 <button class="btn btn-info" type="submit"  name="login" >Logear</button>
                             </div>
                         </div>
+                    </form>
+                    <form class="form-horizontal" method="post">
                         <div class="text-center">
                             <h2> O con Facebook</h2>
                         </div>
@@ -191,28 +193,6 @@
             </div>
         </div>
     </section>
-
-    <?php
-    if(isset($_REQUEST["login"])){
-        $usuario = $_REQUEST["us"];
-        $contraseña = $_REQUEST["pass"];
-        require("./_conexionLogin.php");
-        require("./logearPedido.php");
-        $obj = new Login();
-        if($obj->conectar()){
-            if($obj->logear($usuario,$contraseña)) {
-                echo"<script>alert('exito');</script>";
-                //    echo "<script> location.href='pedidos_b.php' ;</script>";
-            }
-            else{
-                echo"<script>alert('Usuario o contraseña incorrecta');</script>";
-            }
-        }
-        else{
-            echo "Error de conexion";
-        }
-    }
-    ?>
 </div>
 </div>
 <footer class="py-5 bg-dark navbar">

@@ -4,6 +4,7 @@
 error_reporting(0);
 include ('_conbbdd.php');
 
+
 $us = $_POST['us'];
 $pass = $_POST['pass'];
 
