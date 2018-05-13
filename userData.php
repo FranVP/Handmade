@@ -6,7 +6,7 @@ include './_conbbddfb.php';
 $userData = json_decode($_POST['userData']);
 if(!empty($userData)){
     $oauth_provider = $_POST['oauth_provider'];
-    //Check whether user data already exists in database
+    //Check user data already exists in database
     $prevQuery = "SELECT * FROM users WHERE oauth_provider = '".$oauth_provider."' AND oauth_uid = '".$userData->id."'";
 
     $prevResult = $db->query($prevQuery);
