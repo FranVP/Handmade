@@ -62,7 +62,8 @@ error_reporting(0);
 
 <?php
 $email = $_POST['email'];
-$resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,telefono,direccion,numero,piso,codigopostal,descripcion,estado FROM pedidos WHERE email='$email'")or die("Error: ".mysqli_error($conexion));
+$telefono = $_POST['telefono'];
+$resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,telefono,direccion,numero,piso,codigopostal,descripcion,estado FROM pedidos WHERE email='$email' and telefono='$telefono'")or die("Error: ".mysqli_error($conexion));
 ?>
 
 <div class="container">
@@ -74,11 +75,20 @@ $resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,tel
         <label class="col-md-3 control-label">Email:</label>
         <div class="col-md-3">
             <input type="text" name="email" id="email" class="form-control" placeholder="Escribe tu email"  required>
-
-            <button class="btn btn-info" type="submit"  name="login" >buscar</button>
-
+        </div>
+        <label class="col-md-3 control-label">Telefono:</label>
+        <div class="col-md-3">
+            <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Escribe telefono"  required>
         </div>
     </div>
+        <div class="form-group">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-info" type="submit"  name="login" >buscar</button>
+            </div>
+        </div>
+        </form>
+
+
     <h2>Historial</h2>
     <p>Aqui tienes el historial de tus pedidos. Solo podras modificar los datos mientras el estado sea Pendiente</p>
     <div class="table-responsive">
@@ -122,7 +132,7 @@ $resultado = mysqli_query($conexion, "SELECT n_pedido, nombre,apellido,email,tel
 
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
-        <p class="m-0 text-center text-white">© 2016-2018 Handmade Presents</p>
+        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
     </div>
 </footer>
 
