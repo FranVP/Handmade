@@ -53,6 +53,37 @@
     </div>
 </nav>
 
+<?php
+$ErrorName = $ErrorLname = $ErrorEmail = "";
+$name = $lname = $email = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $ErrorNombre = "";
+    } else {
+        $name = test_input($_POST["name"]);
+    }
+
+    if (empty($_POST["lname"])) {
+        $ErrorLname = "";
+    } else {
+        $lname = test_input($_POST["lname"]);
+    }
+
+    if (empty($_POST["email"])) {
+        $ErrorEmail = "";
+    } else {
+        $email = test_input($_POST["email"]);
+    }
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
