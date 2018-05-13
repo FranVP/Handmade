@@ -5,7 +5,7 @@
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
-            location.href='pedidos.php';
+            location.href='../pedidos.php';
         } else if(response.status == 'not_authorized') {
             alert('Debes autorizar la app!');
         } else {
@@ -86,7 +86,7 @@
 <head lang="es">
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
 body{
     background-color: #b6abff}
@@ -121,7 +121,7 @@ body{
             <div class="panel panel-default">
                  <div class="panel-body">
                      <!--FORMULARIO DE ALTA USUARIO -->
-                     <form class="form-horizontal" method="post" action="loginPedido_add_reg.php">
+                     <form class="form-horizontal" method="post" action="../loginPedido_add_reg.php">
                          <div class="text-center">
                              <h2>Nuevo Usuario</h2>
                          </div>
@@ -203,7 +203,7 @@ body{
             if($obj->conectar()){
                 if($obj->logear($usuario,$contraseña)){
                     echo"<script>alert('exito');</script>";
-                    echo"<script>location.href='pedidos.php';</script>";
+                    echo "<script>location.href='../pedidos.php';</script>";
                 }
                 else{
                     echo"<script>alert('Usuario o contraseña incorrecta');</script>";
@@ -227,7 +227,7 @@ body{
     </div>
 </div>
 
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

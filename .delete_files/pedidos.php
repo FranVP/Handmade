@@ -10,7 +10,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 <head lang="es">
     <meta charset="UTF-8">
     <title>Pedidos</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
         body{
             background-color: #b6abff}
@@ -43,7 +43,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
         <div class="col-md-12">
             <div class="well well-sm">
                 <!--FORMULARIO PEDIDO -->
-                <form class="form-horizontal" method="post" action="pedidos_add_reg.php">
+                <form class="form-horizontal" method="post" action="../pedidos_add_reg.php">
                     <fieldset>
                         <legend class="text-center header">Pedidos</legend>
 
@@ -119,7 +119,7 @@ $formulario = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
     </div>
 </div>
 
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

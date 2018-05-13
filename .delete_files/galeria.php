@@ -5,7 +5,7 @@ include('_conbbdd.php');
 <head lang="es">
     <meta charset="UTF-8">
     <title>Galeria</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
         body{
             background-color: #b6abff}
@@ -27,11 +27,11 @@ include('_conbbdd.php');
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="../nosotros.php">Nosotros</a></li>
                 <li><a href="contacta.php">Contacta</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php">Pedidos</a></li>
+                <li><a href="../loginPedido.php">Pedidos</a></li>
             </ul>
         </div>
     </div>
@@ -95,12 +95,12 @@ include('_conbbdd.php');
         <div class="col-xs-12 col-sm-9">
             © 2016-2017 Handmade Presents
             <a href="home.php">Home</a>
-            <a href="nosotros.php">Nosotros</a>
+            <a href="../nosotros.php">Nosotros</a>
             <a href="contacta.php">Contacta</a>
         </div>
     </div>
 </div>
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

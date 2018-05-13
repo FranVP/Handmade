@@ -7,7 +7,6 @@ include ('_conbbdd.php');
 $us = $_POST['us'];
 $pass = $_POST['pass'];
 
-
 //autocompletar formulario login
 
 $resultado = mysqli_query($conexion,"SELECT usuario, email, nombre, apellido,telefono FROM login WHERE usuario='$us' and password='$pass'")
@@ -138,7 +137,7 @@ $fila = mysqli_fetch_assoc( $resultado);
 </div>
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
-        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
+        <p class="m-0 text-center text-white">© 2016-2018 Handmade Presents</p>
     </div>
 </footer>
 

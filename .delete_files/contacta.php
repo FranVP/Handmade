@@ -2,7 +2,7 @@
 <head lang="es">
     <meta charset="UTF-8">
     <title>Contacta</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
         body {
             background-color: #b6abff
@@ -26,11 +26,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="nosotros.php">Nosotros</a></li>
-                <li><a href="galeria.php">Galeria</a></li>
+                <li><a href="../nosotros.php">Nosotros</a></li>
+                <li><a href="../galeria.php">Galeria</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php">Pedidos</a></li>
+                <li><a href="../loginPedido.php">Pedidos</a></li>
             </ul>
         </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post" action="contactaSendMail.php" method="post">
+                <form class="form-horizontal" method="post" action="../contactaSendMail.php" method="post">
                     <fieldset>
                         <legend class="text-center header">Contacta con Nosotros</legend>
                         <div class="form-group">
@@ -110,13 +110,13 @@ $message = $_POST["message"];
         <div class="col-xs-12 col-sm-9">
             © 2016-2017 Handmade Presents
             <a href="home.php">Home</a>
-            <a href="nosotros.php">Nosotros</a>
-            <a href="galeria.php">Galeria</a>
+            <a href="../nosotros.php">Nosotros</a>
+            <a href="../galeria.php">Galeria</a>
         </div>
     </div>
 </div>
 
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

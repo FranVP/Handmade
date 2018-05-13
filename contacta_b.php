@@ -53,8 +53,6 @@
     </div>
 </nav>
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -62,8 +60,6 @@
                 <form class="form-horizontal" method="post" action="contactaSendMail.php">
                     <fieldset>
                         <legend class="text-center header">Contacta con Nosotros</legend>
-
-
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-2x fa-user text-primary"></i></span>
                             <div class="col-md-8">
@@ -100,11 +96,6 @@
                             </div>
                         </div>
 
-
-
-
-
-
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <input type="submit" value="Enviar" class="btn btn-primary btn-lg"></>
@@ -127,7 +118,7 @@ $message = $_POST["message"];
 
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
-        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
+        <p class="m-0 text-center text-white">© 2016-2018 Handmade Presents</p>
     </div>
 </footer>
 

@@ -119,7 +119,7 @@ mysqli_close($conexion);
 
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
-        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
+        <p class="m-0 text-center text-white">© 2016-2018 Handmade Presents</p>
     </div>
 </footer>
 

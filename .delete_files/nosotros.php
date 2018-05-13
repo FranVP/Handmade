@@ -2,7 +2,7 @@
 <head lang="es">
     <meta charset="UTF-8">
     <title>Nosotros</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
         body {
             background-color: #b6abff
@@ -30,14 +30,14 @@
                 <li><a href="galeria.php">Galeria</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="loginPedido.php">Pedidos</a></li>
+                <li><a href="../loginPedido.php">Pedidos</a></li>
             </ul>
         </div>
     </div>
 </nav>
 </div>
 <div class="img_nosotros">
-    <body background="img/art-1838414.jpg" />
+    <body background="../img/art-1838414.jpg" />
 </div>
 <div class="container">
     <body>
@@ -97,7 +97,7 @@
     </div>
 
 
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

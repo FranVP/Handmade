@@ -2,7 +2,7 @@
 <head lang="es">
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <style>
         body{
             background: linear-gradient(#000000,dimgray,grey,darkgray,#c0c0c0,lightgray )
@@ -30,7 +30,7 @@
                         <li><a href="contacta.php">Contacta</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="loginPedido.php">Pedidos</a></li>
+                    <li><a href="../loginPedido.php">Pedidos</a></li>
                 </ul>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail First" src="img/quien_somos.jpg" />
+                            <img alt="Bootstrap Thumbnail First" src="../img/quien_somos.jpg" />
                             <div class="caption">
                                 <h3>
                                     Quien somos
@@ -51,14 +51,14 @@
                                     Encuentra toda la información sobre nosotros, donde nació la idea de handmade presents y en donde están nuestras oficinas.
                                 </p>
                                 <p>
-                                    <a class="btn btn-primary" href="nosotros.php">Quien Somos</a>
+                                    <a class="btn btn-primary" href="../nosotros.php">Quien Somos</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail Second" src="img/Galeria_home.png" />
+                            <img alt="Bootstrap Thumbnail Second" src="../img/Galeria_home.png" />
                             <div class="caption">
                                 <h3>
                                     Visita nuestra Galería
@@ -67,14 +67,14 @@
                                     En nuestra Galería podrás encontrar todos nuestros productos. Tanto los que tenemos, como los que hemos tenido.
                                 </p>
                                 <p>
-                                    <a class="btn btn-primary" href="galeria.php">Galería</a>
+                                    <a class="btn btn-primary" href="../galeria.php">Galería</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail Third" src="img/Contacta_home.jpg" />
+                            <img alt="Bootstrap Thumbnail Third" src="../img/Contacta_home.jpg" />
                             <div class="caption">
                                 <h3>
                                     Contacta con nosotros
@@ -83,7 +83,7 @@
                                     Has visto algún producto que te gusta y no tenemos actualmente, tienes una idea y quieres saber si podríamos hacerlo...
                                 </p>
                                 <p>
-                                    <a class="btn btn-primary" href="contacta.php">Contacta</a>
+                                    <a class="btn btn-primary" href="../contacta.php">Contacta</a>
                                 </p>
                             </div>
                         </div>
@@ -96,13 +96,13 @@
         <div class="row">
             <div class="col-xs-12 col-sm-9">
                 © 2016-2017 Handmade Presents
-                <a href="nosotros.php">Nosotros</a>
-                <a href="galeria.php">Galeria</a>
-                <a href="contacta.php">Contacta</a>
+                <a href="../nosotros.php">Nosotros</a>
+                <a href="../galeria.php">Galeria</a>
+                <a href="../contacta.php">Contacta</a>
             </div>
         </div>
     </div>
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

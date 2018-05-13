@@ -8,14 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
         }
 
-
-        /* Set black background color, white text and some padding */
         footer {
             margin-top: 5px;
             background-color: #000000;
@@ -35,7 +32,6 @@
             margin-top: 110px;
         }
 
-        /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
             .sidenav {
                 height: auto;
@@ -101,7 +97,7 @@ mail($destino, "contacto web", $contenido);
 
 <footer class="py-5 bg-dark navbar">
     <div class="container_footer">
-        <p class="m-0 text-center text-white">© 2016-2017 Handmade Presents</p>
+        <p class="m-0 text-center text-white">© 2016-2018 Handmade Presents</p>
     </div>
 </footer>
 
